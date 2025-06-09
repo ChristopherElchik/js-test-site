@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dom-manipulation">DOM Manipulation</a></li>
+                <li><a href="/forms">Forms & Validation</a></li>
+                <li><a href="/api-demo">API Demo</a></li>
+                <li><a href="/animations">Animations</a></li>
+                <li><a href="/local-storage">Local Storage</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>JavaScript Test Website</h1>
+        
+        <div class="card">
+            <h2>Welcome to the JavaScript Testing Ground!</h2>
+            <p>This website demonstrates various JavaScript features across multiple pages. Each page showcases different aspects of modern web development.</p>
+        </div>
+
+        <div class="card">
+            <h2>Quick Demo - Dynamic Clock</h2>
+            <div id="clock" class="demo-box">
+                <div id="current-time"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Interactive Elements</h2>
+            <button class="btn" onclick="changeTheme()">Toggle Theme</button>
+            <button class="btn" onclick="showAlert()">Show Alert</button>
+            <button class="btn" onclick="addRandomCard()">Add Random Card</button>
+        </div>
+
+        <div id="dynamic-content"></div>
+
+        <div class="card">
+            <h2>Pages Overview</h2>
+            <ul>
+                <li><strong>DOM Manipulation:</strong> Dynamic content creation, element modification, event handling</li>
+                <li><strong>Forms & Validation:</strong> Form handling, real-time validation, input sanitization</li>
+                <li><strong>API Demo:</strong> Fetch API, async/await, error handling</li>
+                <li><strong>Animations:</strong> CSS animations, JavaScript animations, transitions</li>
+                <li><strong>Local Storage:</strong> Data persistence, session management</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+</html> 

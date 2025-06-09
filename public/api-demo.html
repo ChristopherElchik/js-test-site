@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Demo - JavaScript Test Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dom-manipulation">DOM Manipulation</a></li>
+                <li><a href="/forms">Forms & Validation</a></li>
+                <li><a href="/api-demo">API Demo</a></li>
+                <li><a href="/animations">Animations</a></li>
+                <li><a href="/local-storage">Local Storage</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>API Demo</h1>
+        
+        <div class="card">
+            <h2>Local API Endpoint</h2>
+            <button class="btn" onclick="fetchLocalData()">Fetch Local Data</button>
+            <button class="btn" onclick="fetchWithLoading()">Fetch with Loading</button>
+            <div id="local-api-result" class="api-result" style="display: none;"></div>
+            <div id="loading-indicator" style="display: none;">Loading...</div>
+        </div>
+
+        <div class="card">
+            <h2>Public API - JSONPlaceholder</h2>
+            <div class="form-group">
+                <label for="post-id">Post ID (1-100):</label>
+                <input type="number" id="post-id" min="1" max="100" value="1">
+            </div>
+            <button class="btn" onclick="fetchPost()">Fetch Post</button>
+            <button class="btn" onclick="fetchAllPosts()">Fetch All Posts</button>
+            <div id="post-result" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Random User API</h2>
+            <button class="btn" onclick="fetchRandomUser()">Get Random User</button>
+            <button class="btn" onclick="fetchMultipleUsers()">Get 5 Random Users</button>
+            <div id="user-result" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Weather API Demo</h2>
+            <div class="form-group">
+                <label for="city-name">City Name:</label>
+                <input type="text" id="city-name" placeholder="Enter city name" value="London">
+            </div>
+            <button class="btn" onclick="fetchWeather()">Get Weather</button>
+            <div id="weather-result" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Error Handling Demo</h2>
+            <button class="btn" onclick="fetchNonExistentEndpoint()">Trigger 404 Error</button>
+            <button class="btn" onclick="fetchWithNetworkError()">Simulate Network Error</button>
+            <div id="error-result" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Async/Await vs Promises</h2>
+            <button class="btn" onclick="demonstratePromises()">Promise Chain Example</button>
+            <button class="btn" onclick="demonstrateAsyncAwait()">Async/Await Example</button>
+            <div id="async-demo-result" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Request Configuration</h2>
+            <button class="btn" onclick="fetchWithHeaders()">Custom Headers</button>
+            <button class="btn" onclick="fetchWithTimeout()">Request with Timeout</button>
+            <button class="btn" onclick="postData()">POST Request</button>
+            <div id="config-result" class="api-result" style="display: none;"></div>
+        </div>
+    </main>
+
+    <script src="/js/api-demo.js"></script>
+</body>
+</html> 

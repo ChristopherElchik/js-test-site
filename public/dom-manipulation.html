@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation - JavaScript Test Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dom-manipulation">DOM Manipulation</a></li>
+                <li><a href="/forms">Forms & Validation</a></li>
+                <li><a href="/api-demo">API Demo</a></li>
+                <li><a href="/animations">Animations</a></li>
+                <li><a href="/local-storage">Local Storage</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>DOM Manipulation Demo</h1>
+        
+        <div class="card">
+            <h2>Element Creation & Modification</h2>
+            <button class="btn" onclick="createElement()">Create New Element</button>
+            <button class="btn" onclick="modifyElements()">Modify Existing Elements</button>
+            <button class="btn" onclick="removeElements()">Remove Elements</button>
+            <div id="element-playground" class="demo-box">
+                <p id="demo-text">This text can be modified!</p>
+                <div class="element-item">Element 1</div>
+                <div class="element-item">Element 2</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Event Handling</h2>
+            <div class="form-group">
+                <button class="btn" id="click-counter">Click Counter: 0</button>
+                <button class="btn" id="hover-btn">Hover Over Me</button>
+                <button class="btn" id="double-click-btn">Double Click Me</button>
+            </div>
+            <div id="event-log" class="demo-box">
+                Event log will appear here...
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Dynamic List Management</h2>
+            <div class="form-group">
+                <input type="text" id="list-item-input" placeholder="Enter item name">
+                <button class="btn" onclick="addListItem()">Add Item</button>
+                <button class="btn" onclick="clearList()">Clear All</button>
+            </div>
+            <ul id="dynamic-list" class="demo-box">
+                <li>Example Item 1 <button onclick="removeListItem(this)">Remove</button></li>
+                <li>Example Item 2 <button onclick="removeListItem(this)">Remove</button></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>CSS Class Manipulation</h2>
+            <button class="btn" onclick="toggleHighlight()">Toggle Highlight</button>
+            <button class="btn" onclick="addRandomColor()">Random Color</button>
+            <div id="style-demo" class="demo-box">
+                This box will change styles dynamically!
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Element Selection & Traversal</h2>
+            <button class="btn" onclick="selectByTag()">Select by Tag</button>
+            <button class="btn" onclick="selectByClass()">Select by Class</button>
+            <button class="btn" onclick="selectById()">Select by ID</button>
+            <div id="selection-result" class="demo-box">
+                Selection results will appear here...
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/dom-manipulation.js"></script>
+</body>
+</html> 

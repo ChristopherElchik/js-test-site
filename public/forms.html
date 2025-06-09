@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms & Validation - JavaScript Test Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dom-manipulation">DOM Manipulation</a></li>
+                <li><a href="/forms">Forms & Validation</a></li>
+                <li><a href="/api-demo">API Demo</a></li>
+                <li><a href="/animations">Animations</a></li>
+                <li><a href="/local-storage">Local Storage</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Forms & Validation Demo</h1>
+        
+        <div class="card">
+            <h2>Contact Form with Validation</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <div id="name-error" class="error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                    <div id="email-error" class="error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                    <div id="phone-error" class="error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="0" max="120">
+                    <div id="age-error" class="error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="">Select a country</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="de">Germany</option>
+                        <option value="fr">France</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <div id="message-error" class="error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        Subscribe to newsletter
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn">Submit Form</button>
+                <button type="button" class="btn" onclick="clearForm()">Clear Form</button>
+            </form>
+            
+            <div id="form-result" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Real-time Input Validation</h2>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+                <div id="password-strength" class="demo-box">
+                    Password strength will appear here...
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm password">
+                <div id="password-match" class="demo-box">
+                    Password match status will appear here...
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Dynamic Form Elements</h2>
+            <button class="btn" onclick="addInputField()">Add Input Field</button>
+            <button class="btn" onclick="removeLastField()">Remove Last Field</button>
+            <div id="dynamic-form" class="demo-box">
+                <!-- Dynamic fields will be added here -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Form Data Processing</h2>
+            <button class="btn" onclick="showFormData()">Show Form Data</button>
+            <button class="btn" onclick="validateAllFields()">Validate All Fields</button>
+            <div id="form-data-display" class="api-result" style="display: none;"></div>
+        </div>
+    </main>
+
+    <script src="/js/forms.js"></script>
+</body>
+</html> 

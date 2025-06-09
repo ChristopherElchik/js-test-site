@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage - JavaScript Test Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dom-manipulation">DOM Manipulation</a></li>
+                <li><a href="/forms">Forms & Validation</a></li>
+                <li><a href="/api-demo">API Demo</a></li>
+                <li><a href="/animations">Animations</a></li>
+                <li><a href="/local-storage">Local Storage</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Local Storage Demo</h1>
+        
+        <div class="card">
+            <h2>Basic Storage Operations</h2>
+            <div class="form-group">
+                <label for="storage-key">Key:</label>
+                <input type="text" id="storage-key" placeholder="Enter key">
+            </div>
+            <div class="form-group">
+                <label for="storage-value">Value:</label>
+                <input type="text" id="storage-value" placeholder="Enter value">
+            </div>
+            <div class="text-center">
+                <button class="btn" onclick="setStorageItem()">Set Item</button>
+                <button class="btn" onclick="getStorageItem()">Get Item</button>
+                <button class="btn" onclick="removeStorageItem()">Remove Item</button>
+                <button class="btn" onclick="clearAllStorage()">Clear All</button>
+            </div>
+            <div id="storage-result" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>User Preferences</h2>
+            <div class="form-group">
+                <label for="theme-select">Theme:</label>
+                <select id="theme-select" onchange="saveThemePreference()">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="auto">Auto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="font-size">Font Size:</label>
+                <input type="range" id="font-size" min="12" max="24" value="16" onchange="saveFontPreference()">
+                <span id="font-size-display">16px</span>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="notifications" onchange="saveNotificationPreference()">
+                    Enable Notifications
+                </label>
+            </div>
+            <button class="btn" onclick="loadUserPreferences()">Load Preferences</button>
+            <button class="btn" onclick="resetPreferences()">Reset to Defaults</button>
+        </div>
+
+        <div class="card">
+            <h2>Todo List with Persistence</h2>
+            <div class="form-group">
+                <input type="text" id="todo-input" placeholder="Enter todo item">
+                <button class="btn" onclick="addTodo()">Add Todo</button>
+            </div>
+            <div id="todo-list" class="demo-box">
+                <!-- Todos will be loaded here -->
+            </div>
+            <div class="text-center">
+                <button class="btn" onclick="clearCompletedTodos()">Clear Completed</button>
+                <button class="btn" onclick="clearAllTodos()">Clear All Todos</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Session vs Local Storage</h2>
+            <div class="form-group">
+                <input type="text" id="session-data" placeholder="Enter session data">
+                <button class="btn" onclick="saveToSession()">Save to Session</button>
+                <button class="btn" onclick="loadFromSession()">Load from Session</button>
+            </div>
+            <div class="form-group">
+                <input type="text" id="local-data" placeholder="Enter local data">
+                <button class="btn" onclick="saveToLocal()">Save to Local</button>
+                <button class="btn" onclick="loadFromLocal()">Load from Local</button>
+            </div>
+            <div id="storage-comparison" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Complex Data Storage</h2>
+            <div class="form-group">
+                <label for="user-name">Name:</label>
+                <input type="text" id="user-name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="user-email">Email:</label>
+                <input type="email" id="user-email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="user-age">Age:</label>
+                <input type="number" id="user-age" placeholder="Enter age">
+            </div>
+            <div class="text-center">
+                <button class="btn" onclick="saveUserProfile()">Save Profile</button>
+                <button class="btn" onclick="loadUserProfile()">Load Profile</button>
+                <button class="btn" onclick="deleteUserProfile()">Delete Profile</button>
+            </div>
+            <div id="profile-result" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Storage Information</h2>
+            <button class="btn" onclick="showStorageInfo()">Show Storage Info</button>
+            <button class="btn" onclick="showAllStorageItems()">Show All Items</button>
+            <div id="storage-info" class="api-result" style="display: none;"></div>
+        </div>
+
+        <div class="card">
+            <h2>Storage Events</h2>
+            <p>Open this page in multiple tabs to see storage events in action!</p>
+            <button class="btn" onclick="triggerStorageEvent()">Trigger Storage Event</button>
+            <div id="storage-events" class="demo-box">
+                Storage events will appear here...
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/local-storage.js"></script>
+</body>
+</html> 
