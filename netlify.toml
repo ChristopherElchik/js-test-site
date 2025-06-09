@@ -1,0 +1,40 @@
+[build]
+  publish = "public"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/data"
+  to = "/.netlify/functions/data"
+  status = 200
+
+[[redirects]]
+  from = "/dom-manipulation"
+  to = "/dom-manipulation.html"
+  status = 200
+
+[[redirects]]
+  from = "/forms"
+  to = "/forms.html"
+  status = 200
+
+[[redirects]]
+  from = "/api-demo"
+  to = "/api-demo.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations"
+  to = "/animations.html"
+  status = 200
+
+[[redirects]]
+  from = "/local-storage"
+  to = "/local-storage.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
