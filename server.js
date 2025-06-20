@@ -32,6 +32,10 @@ app.get('/local-storage', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'local-storage.html'));
 });
 
+app.get('/iframe-test', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'iframe-test.html'));
+});
+
 // Simple API endpoint for testing
 app.get('/api/data', (req, res) => {
     res.json({
@@ -50,4 +54,5 @@ app.listen(PORT, () => {
     console.log('- API Demo: http://localhost:3001/api-demo');
     console.log('- Animations: http://localhost:3001/animations');
     console.log('- Local Storage: http://localhost:3001/local-storage');
+    console.log('- Iframe Test: http://localhost:3001/iframe-test');
 }); 

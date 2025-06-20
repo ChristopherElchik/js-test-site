@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Test - JavaScript Test Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/initPendo.js"></script>
+    <style>
+        .iframe-container {
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .iframe-header {
+            background: #f5f5f5;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .iframe-content {
+            width: 100%;
+            border: none;
+        }
+        
+        .iframe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .iframe-controls {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .iframe-controls button {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .iframe-status {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .iframe-loading {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dom-manipulation">DOM Manipulation</a></li>
+                <li><a href="/forms">Forms & Validation</a></li>
+                <li><a href="/api-demo">API Demo</a></li>
+                <li><a href="/animations">Animations</a></li>
+                <li><a href="/local-storage">Local Storage</a></li>
+                <li><a href="/iframe-test">Iframe Test</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Iframe Test Page for Pendo</h1>
+        
+        <div class="card">
+            <h2>Pendo Page Tagging Test</h2>
+            <p>This page contains multiple iframes to test Pendo's page tagging functionality across different embedded content. Each iframe represents a different scenario you might encounter in real applications.</p>
+            
+            <div class="iframe-controls">
+                <button class="btn" onclick="reloadAllIframes()">Reload All Iframes</button>
+                <button class="btn" onclick="toggleIframeVisibility()">Toggle Iframe Visibility</button>
+                <button class="btn" onclick="addDynamicIframe()">Add Dynamic Iframe</button>
+                <button class="btn" onclick="removeLastIframe()">Remove Last Iframe</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>External Website Iframes</h2>
+            <div class="iframe-grid">
+                <div class="iframe-container">
+                    <div class="iframe-header">Google (External Site)</div>
+                    <iframe src="https://www.google.com" class="iframe-content" height="300" data-pendo-iframe="google-external"></iframe>
+                    <div class="iframe-status">Status: External site - may be blocked by X-Frame-Options</div>
+                </div>
+                
+                <div class="iframe-container">
+                    <div class="iframe-header">Wikipedia (External Site)</div>
+                    <iframe src="https://en.wikipedia.org/wiki/Main_Page" class="iframe-content" height="300" data-pendo-iframe="wikipedia-external"></iframe>
+                    <div class="iframe-status">Status: External site - may be blocked by X-Frame-Options</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Same-Origin Iframes</h2>
+            <div class="iframe-grid">
+                <div class="iframe-container">
+                    <div class="iframe-header">Home Page (Same Origin)</div>
+                    <iframe src="/" class="iframe-content" height="300" data-pendo-iframe="home-same-origin"></iframe>
+                    <div class="iframe-status">Status: Same origin - should work with Pendo</div>
+                </div>
+                
+                <div class="iframe-container">
+                    <div class="iframe-header">Forms Page (Same Origin)</div>
+                    <iframe src="/forms.html" class="iframe-content" height="300" data-pendo-iframe="forms-same-origin"></iframe>
+                    <div class="iframe-status">Status: Same origin - should work with Pendo</div>
+                </div>
+                
+                <div class="iframe-container">
+                    <div class="iframe-header">API Demo Page (Same Origin)</div>
+                    <iframe src="/api-demo.html" class="iframe-content" height="300" data-pendo-iframe="api-demo-same-origin"></iframe>
+                    <div class="iframe-status">Status: Same origin - should work with Pendo</div>
+                </div>
+                
+                <div class="iframe-container">
+                    <div class="iframe-header">Local Storage Page (Same Origin)</div>
+                    <iframe src="/local-storage.html" class="iframe-content" height="300" data-pendo-iframe="local-storage-same-origin"></iframe>
+                    <div class="iframe-status">Status: Same origin - should work with Pendo</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Dynamic Content Iframes</h2>
+            <div class="iframe-grid">
+                <div class="iframe-container">
+                    <div class="iframe-header">Dynamic Iframe 1</div>
+                    <iframe src="data:text/html,<html><head><title>Dynamic Content 1</title></head><body><h1>Dynamic Iframe Content 1</h1><p>This iframe was loaded with data URI</p><button onclick='alert(\"Hello from iframe!\")'>Click Me</button></body></html>" class="iframe-content" height="300" data-pendo-iframe="dynamic-1"></iframe>
+                    <div class="iframe-status">Status: Data URI - limited Pendo functionality</div>
+                </div>
+                
+                <div class="iframe-container">
+                    <div class="iframe-header">Dynamic Iframe 2</div>
+                    <iframe src="data:text/html,<html><head><title>Dynamic Content 2</title></head><body><h1>Dynamic Iframe Content 2</h1><p>Another data URI iframe for testing</p><input type='text' placeholder='Test input'><button>Submit</button></body></html>" class="iframe-content" height="300" data-pendo-iframe="dynamic-2"></iframe>
+                    <div class="iframe-status">Status: Data URI - limited Pendo functionality</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Nested Iframe Test</h2>
+            <div class="iframe-container">
+                <div class="iframe-header">Parent Iframe with Nested Content</div>
+                <iframe src="data:text/html,<html><head><title>Parent Iframe</title></head><body><h1>Parent Iframe</h1><p>This iframe contains another iframe:</p><iframe src='/' style='width:100%;height:200px;border:1px solid #ccc;' title='Nested iframe'></iframe></body></html>" class="iframe-content" height="400" data-pendo-iframe="nested-parent"></iframe>
+                <div class="iframe-status">Status: Nested iframe - test Pendo's nested iframe handling</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Iframe with Different Loading States</h2>
+            <div class="iframe-grid">
+                <div class="iframe-container">
+                    <div class="iframe-header">Slow Loading Iframe</div>
+                    <iframe src="https://httpbin.org/delay/3" class="iframe-content" height="300" data-pendo-iframe="slow-loading"></iframe>
+                    <div class="iframe-status">Status: Delayed response - test loading states</div>
+                </div>
+                
+                <div class="iframe-container">
+                    <div class="iframe-header">Error Iframe</div>
+                    <iframe src="https://httpbin.org/status/404" class="iframe-content" height="300" data-pendo-iframe="error-iframe"></iframe>
+                    <div class="iframe-status">Status: 404 error - test error handling</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dynamic-iframes-container">
+            <!-- Dynamic iframes will be added here -->
+        </div>
+
+        <div class="card">
+            <h2>Iframe Information</h2>
+            <div id="iframe-info" class="demo-box">
+                <p><strong>Total Iframes:</strong> <span id="iframe-count">0</span></p>
+                <p><strong>Loaded Iframes:</strong> <span id="loaded-count">0</span></p>
+                <p><strong>Failed Iframes:</strong> <span id="failed-count">0</span></p>
+                <div id="iframe-details"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/iframe-test.js"></script>
+</body>
+</html> 
