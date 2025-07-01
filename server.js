@@ -36,6 +36,10 @@ app.get('/iframe-test', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'iframe-test.html'));
 });
 
+app.get('/button-stress-test', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'button-stress-test.html'));
+});
+
 // Simple API endpoint for testing
 app.get('/api/data', (req, res) => {
     res.json({
@@ -55,4 +59,5 @@ app.listen(PORT, () => {
     console.log('- Animations: http://localhost:3001/animations');
     console.log('- Local Storage: http://localhost:3001/local-storage');
     console.log('- Iframe Test: http://localhost:3001/iframe-test');
+    console.log('- Button Stress Test: http://localhost:3001/button-stress-test');
 }); 

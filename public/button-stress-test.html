@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Stress Test - JavaScript Test Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/initPendo.js"></script>
+    <style>
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .button-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .stress-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            min-height: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .stress-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .button-counter {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .clicked {
+            background: linear-gradient(45deg, #28a745, #20c997) !important;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dom-manipulation">DOM Manipulation</a></li>
+                <li><a href="/forms">Forms & Validation</a></li>
+                <li><a href="/api-demo">API Demo</a></li>
+                <li><a href="/animations">Animations</a></li>
+                <li><a href="/local-storage">Local Storage</a></li>
+                <li><a href="/iframe-test">Iframe Test</a></li>
+                <li><a href="/button-stress-test">Button Stress Test</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="button-counter">
+        <h3>Click Counter</h3>
+        <p>Total Clicks: <span id="total-clicks">0</span></p>
+        <p>Unique Buttons: <span id="unique-clicks">0</span></p>
+        <button class="btn" onclick="resetCounter()">Reset Counter</button>
+    </div>
+
+    <main class="container">
+        <h1>Button Stress Test</h1>
+        
+        <div class="card">
+            <h2>Web Analytics Stress Testing</h2>
+            <p>This page contains over 200 buttons to help stress test web analytics software. Each button has unique tracking attributes and generates different events.</p>
+            <p><strong>Total Buttons:</strong> <span id="button-count">0</span></p>
+        </div>
+
+        <div class="button-section">
+            <h3>Primary Action Buttons (1-50)</h3>
+            <div class="button-grid" id="primary-buttons">
+                <!-- Primary buttons will be generated here -->
+            </div>
+        </div>
+
+        <div class="button-section">
+            <h3>Secondary Action Buttons (51-100)</h3>
+            <div class="button-grid" id="secondary-buttons">
+                <!-- Secondary buttons will be generated here -->
+            </div>
+        </div>
+
+        <div class="button-section">
+            <h3>Utility Buttons (101-150)</h3>
+            <div class="button-grid" id="utility-buttons">
+                <!-- Utility buttons will be generated here -->
+            </div>
+        </div>
+
+        <div class="button-section">
+            <h3>Navigation Buttons (151-200)</h3>
+            <div class="button-grid" id="navigation-buttons">
+                <!-- Navigation buttons will be generated here -->
+            </div>
+        </div>
+
+        <div class="button-section">
+            <h3>Dynamic Buttons (201-250)</h3>
+            <div class="button-grid" id="dynamic-buttons">
+                <!-- Dynamic buttons will be generated here -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Test Controls</h2>
+            <button class="btn" onclick="clickAllButtons()">Click All Buttons</button>
+            <button class="btn" onclick="clickRandomButtons(10)">Click 10 Random Buttons</button>
+            <button class="btn" onclick="clickRandomButtons(50)">Click 50 Random Buttons</button>
+            <button class="btn" onclick="resetAllButtons()">Reset All Buttons</button>
+            <button class="btn" onclick="exportClickData()">Export Click Data</button>
+        </div>
+
+        <div class="card">
+            <h2>Click Analytics</h2>
+            <div id="analytics-display">
+                <p>Click data will appear here...</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/button-stress-test.js"></script>
+</body>
+</html> 
