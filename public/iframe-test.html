@@ -78,36 +78,20 @@
     </header>
 
     <main class="container">
-        <h1>Iframe Test Page for Pendo</h1>
+        <h1>Same-Origin Iframe Test Page</h1>
         
         <div class="card">
-            <h2>Pendo Page Tagging Test</h2>
-            <p>This page contains multiple iframes to test Pendo's page tagging functionality across different embedded content. Each iframe represents a different scenario you might encounter in real applications.</p>
+            <h2>Same-Origin Iframe Testing</h2>
+            <p>This page contains multiple same-origin iframes to test Pendo's page tagging functionality and html2canvas rendering. All iframes are from the same domain for optimal compatibility.</p>
             
             <div class="iframe-controls">
                 <button class="btn" onclick="reloadAllIframes()">Reload All Iframes</button>
-                <button class="btn" onclick="toggleIframeVisibility()">Toggle Iframe Visibility</button>
                 <button class="btn" onclick="addDynamicIframe()">Add Dynamic Iframe</button>
                 <button class="btn" onclick="removeLastIframe()">Remove Last Iframe</button>
             </div>
         </div>
 
-        <div class="card">
-            <h2>External Website Iframes</h2>
-            <div class="iframe-grid">
-                <div class="iframe-container">
-                    <div class="iframe-header">Google (External Site)</div>
-                    <iframe src="https://www.google.com" class="iframe-content" height="300" data-pendo-iframe="google-external"></iframe>
-                    <div class="iframe-status">Status: External site - may be blocked by X-Frame-Options</div>
-                </div>
-                
-                <div class="iframe-container">
-                    <div class="iframe-header">Wikipedia (External Site)</div>
-                    <iframe src="https://en.wikipedia.org/wiki/Main_Page" class="iframe-content" height="300" data-pendo-iframe="wikipedia-external"></iframe>
-                    <div class="iframe-status">Status: External site - may be blocked by X-Frame-Options</div>
-                </div>
-            </div>
-        </div>
+
 
         <div class="card">
             <h2>Same-Origin Iframes</h2>
@@ -164,22 +148,7 @@
             </div>
         </div>
 
-        <div class="card">
-            <h2>Iframe with Different Loading States</h2>
-            <div class="iframe-grid">
-                <div class="iframe-container">
-                    <div class="iframe-header">Slow Loading Iframe</div>
-                    <iframe src="https://httpbin.org/delay/3" class="iframe-content" height="300" data-pendo-iframe="slow-loading"></iframe>
-                    <div class="iframe-status">Status: Delayed response - test loading states</div>
-                </div>
-                
-                <div class="iframe-container">
-                    <div class="iframe-header">Error Iframe</div>
-                    <iframe src="https://httpbin.org/status/404" class="iframe-content" height="300" data-pendo-iframe="error-iframe"></iframe>
-                    <div class="iframe-status">Status: 404 error - test error handling</div>
-                </div>
-            </div>
-        </div>
+
 
         <div id="dynamic-iframes-container">
             <!-- Dynamic iframes will be added here -->

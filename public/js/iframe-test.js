@@ -142,19 +142,7 @@ function reloadAllIframes() {
     console.log('Reloaded all iframes');
 }
 
-// Toggle iframe visibility
-function toggleIframeVisibility() {
-    const iframes = document.querySelectorAll('iframe');
-    iframes.forEach(iframe => {
-        if (iframe.style.display === 'none') {
-            iframe.style.display = 'block';
-        } else {
-            iframe.style.display = 'none';
-        }
-    });
-    
-    console.log('Toggled iframe visibility');
-}
+
 
 // Add a dynamic iframe
 function addDynamicIframe() {
@@ -282,7 +270,6 @@ function testPendoIntegration() {
 
 // Expose functions globally for button clicks
 window.reloadAllIframes = reloadAllIframes;
-window.toggleIframeVisibility = toggleIframeVisibility;
 window.addDynamicIframe = addDynamicIframe;
 window.removeLastIframe = removeLastIframe;
 window.testPendoIntegration = testPendoIntegration;
